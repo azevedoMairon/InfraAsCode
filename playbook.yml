@@ -1,8 +1,15 @@
 - hosts: terraform-ansible
   tasks:
-    - name: Criar arquivo Html
-      copy:
-        dest: /home/ubuntu/index.html
-        content: "Feito com Terraform e Ansible"
-    - name: Criando Servidor
-      shell: "nohup busybox httpd -f -p 8080 &"
+    - name: Instalação Python3 e VirtualEnv
+      apt:
+        pkg:
+          - python3
+          - virtualenv
+        update_cache: yes
+      become: yes
+    - name: Instalando dependências com pip (Django e Django Rest)
+      pip:
+        virtualenv: /home/ubuntu/tcc/venv
+        name:
+          - django
+          - djangorestframework

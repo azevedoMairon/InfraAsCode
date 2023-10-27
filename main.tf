@@ -19,6 +19,6 @@ resource "aws_instance" "app_server" {
   key_name      = "iac-mairon"
   
   tags = {
-    Name = "Aws Instance"
+    Name = "Terraform Python"
   }
 }
