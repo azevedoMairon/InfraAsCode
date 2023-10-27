@@ -40,3 +40,6 @@ terraform.rc
 # End of https://www.toptal.com/developers/gitignore/api/terraform
 
 *.pem
+*.pub
+Iac-DEV
+Iac-PROD
